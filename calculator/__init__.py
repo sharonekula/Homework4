@@ -8,7 +8,7 @@ class Calculator:
     @staticmethod
     def _perform(a: Decimal, b: Decimal, operation:Callable[[Decimal,Decimal], Decimal]) -> Decimal :
         calc = Calculation.createCalculation(a, b, operation)
-        Calculation.add_calc(calc)
+        Calculations.add_calc(calc)
         return calc.perform()
     
     @staticmethod
@@ -25,4 +25,4 @@ class Calculator:
         
     @staticmethod
     def divide(a: Decimal, b: Decimal) -> Decimal:
-        Calculator._perform(a, b, divide)
+        return Calculator._perform(a, b, divide)
