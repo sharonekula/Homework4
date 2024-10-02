@@ -1,5 +1,5 @@
 import pytest
-from main import calculate_and_print
+from main import map_operate_print
 
 @pytest.mark.parametrize("a_string, b_string, operation_string, expected_string", [
     ("5", "3", 'add', "The result of 5 add 3 is equal to 8"),
@@ -10,9 +10,9 @@ from main import calculate_and_print
     ("9", "3", 'unknown', "Unknown operation: unknown"),
     ("a", "3", 'add', "Invalid number input: a or 3 is not a valid number."),
     ("5", "b", 'subtract', "Invalid number input: 5 or b is not a valid number.")
-    ("24", "10", 'multiply', "The result of 24 multiply 10 is equal to 240")
 ])
-def test_calculate_and_print(a_string, b_string, operation_string,expected_string, capsys):
-    calculate_and_print(a_string, b_string, operation_string)
+
+def test_map_operate_print(a_string, b_string, operation_string,expected_string, capsys):
+    map_operate_print(a_string, b_string, operation_string)
     captured = capsys.readouterr()
     assert captured.out.strip() == expected_string

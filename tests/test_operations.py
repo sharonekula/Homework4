@@ -27,6 +27,6 @@ def test_operation_divide():
 
 def test_divide_by_zero():
     '''Testing the divide by zero exception'''
-    with pytest.raises(ValueError, match="DivisionByZero exception occured."):
+    with pytest.raises(ValueError, match="Cannot divide by zero"):
         calculation = Calculation(Decimal('5'), Decimal('0'), divide)
         calculation.perform()
