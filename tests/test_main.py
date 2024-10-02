@@ -1,3 +1,7 @@
+'''
+The module will consist of pytest parametrize for string type a and b values along with operation
+to be performed and the expected value. test method for the map_operate_print method.
+'''
 import pytest
 from main import map_operate_print
 
@@ -13,6 +17,10 @@ from main import map_operate_print
 ])
 
 def test_map_operate_print(a_string, b_string, operation_string,expected_string, capsys):
+    '''
+    This function performs a test using pytest's capsys fixture to capture and verify
+    the printed output from the map_operate_print function.
+    '''
     map_operate_print(a_string, b_string, operation_string)
     captured = capsys.readouterr()
     assert captured.out.strip() == expected_string

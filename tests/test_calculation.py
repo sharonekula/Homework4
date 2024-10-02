@@ -1,8 +1,10 @@
-#Module Docstring unit tests for the calculation class and its operations(add,sub,mul,div) are included in this module.For parameterized testing pytest is used
+'''
+Unit tests for the calculation class and its operations(add,sub,mul,div) are included in this module.For parameterized testing pytest is used
+'''
 from decimal import Decimal
 import pytest
 from calculator.calculation import Calculation
-from calculator.operations import add, subtract, multiply, divide
+from calculator.operations import  subtract, divide
 
 def test_perform(a, b, operation, expected):
     '''
